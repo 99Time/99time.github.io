@@ -40,5 +40,136 @@
 	<!-- Comienzo de la Sección de Inicio -->
 	<section class="home wow flash" id="home">
 		<div class="container">
-			<h1 class="wow slideInLeft" data-wow-delay="1s">Es hora de <span>gimnasio</span>. Vamos</h1>
-			<h1 class="wow slideInRight
+			<h1 class="wow slideInLeft" data-wow-delay="1s">Es hora de <span>gimnasio</span>. ¡Vamos!</h1>
+			<h1 class="wow slideInRight" data-wow-delay="1s">Estamos listos para <span>ponerte en forma</span></h1>
+		</div>
+		<!-- Ir hacia abajo -->
+		<a href="#about" class="go-down">
+			<i class="fa fa-angle-down" aria-hidden="true"></i>
+		</a>
+		<!-- Ir hacia abajo -->
+	</section>
+	<!-- Fin de la Sección de Inicio -->
+
+	<!-- Comienzo de la Sección Acerca de -->
+	<section class="about" id="about">
+		<div class="container">
+			<div class="content">
+				<!-- Contenido omitido para mayor claridad -->
+			</div>
+		</div>
+	</section>
+	<!-- Fin de la Sección Acerca de -->
+
+	<!-- Comienzo de la Sección de Servicios -->
+	<section class="service" id="service">
+		<div class="container">
+			<div class="content">
+				<!-- Contenido omitido para mayor claridad -->
+			</div>
+		</div>
+	</section>
+	<!-- Fin de la Sección de Servicios -->
+
+	<!-- Comienzo de la Sección de Clases -->
+	<section class="classes" id="classes">
+		<div class="container">
+			<div class="content">
+				<!-- Contenido omitido para mayor claridad -->
+			</div>
+		</div>
+	</section>
+	<!-- Fin de la Sección de Clases -->
+
+	<!-- Comienzo de la Sección de Hoy -->
+	<section class="start-today">
+		<div class="container">
+			<div class="content">
+				<!-- Contenido omitido para mayor claridad -->
+			</div>
+		</div>
+	</section>
+	<!-- Fin de la Sección de Hoy -->
+
+	<!-- Comienzo de la Sección de Horario -->
+	<section class="schedule" id="schedule">
+		<div class="container">
+			<div class="content">
+				<!-- Contenido omitido para mayor claridad -->
+			</div>
+		</div>
+	</section>
+	<!-- Fin de la Sección de Horario -->
+
+	<!-- Comienzo de la Galería -->
+	<section class="gallery" id="gallery">
+		<h2>Galería de Ejercicios</h2>
+		<div class="content">
+			<!-- Contenido omitido para mayor claridad -->
+		</div>
+	</section>
+	<!-- Fin de la Galería -->
+
+	<!-- Comienzo de la Sección de Precio -->
+	<section class="price-package" id="price">
+		<div class="container">
+			<!-- Contenido omitido para mayor claridad -->
+		</div>
+	</section>
+	<!-- Fin de la Sección de Precio -->
+
+	<!-- Comienzo de la Sección de Contacto -->
+	<section class="contact" id="contact">
+		<div class="container">
+			<div class="content">
+				<!-- Contenido omitido para mayor claridad -->
+			</div>
+		</div>
+	</section>
+	<!-- Fin de la Sección de Contacto -->
+
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+
+			$(".ham-burger, .nav ul li a").click(function(){
+				$(".nav").toggleClass("open");
+				$(".ham-burger").toggleClass("active");
+			});
+
+			$(".accordian-container").click(function(){
+				$(".accordian-container").children(".body").slideUp();
+				$(".accordian-container").removeClass("active");
+				$(".accordian-container").children(".head").children("span").removeClass("fa-angle-down").addClass("fa-angle-up");
+				$(this).children(".body").slideDown();
+				$(this).addClass("active");
+				$(this).children(".head").children("span").removeClass("fa-angle-up").addClass("fa-angle-down");
+			});
+
+			$(".nav ul li a, .go-down").click(function(event){
+				if(this.hash !== ""){
+					event.preventDefault();
+					var hash = this.hash;
+					$('html,body').animate({
+						scrollTop: $(hash).offset().top
+					}, 800 , function(){
+						window.location.hash = hash;
+					});
+					// Agregar clase activa en la navegación
+					$(".nav ul li a").removeClass("active");
+					$(this).addClass("active");
+				}
+			});
+		});
+	</script>
+	<script src="js/wow.min.js"></script>
+	<script>
+		wow = new WOW({
+			animateClass: 'animated',
+			offset:       0,
+		});
+		wow.init();
+	</script>
+</body>
+</html>
